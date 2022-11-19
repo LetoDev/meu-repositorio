@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquina de meme</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="container">
+<div class="app" id="downlabled">
+        <div class="logo">
+            <h1>Maquina <span class="input"></span></h1>
+        </div>
+
+        <div class="app-image">
+            <textarea
+            name=""
+            class="text-box"
+            placeholder="Texto Superior"
+            aria-multiline="true"
+            ></textarea>
+            <div id="display-image"></div>
+
+            <textarea
+            name=""
+            class="text-box"
+            placeholder="Texto Inferior"
+            aria-multiline="true"
+            ></textarea>
+        </div>
+
+        <div class="app-photo-picker">
+            <select 
+                id="memes-list"
+                onchange="changeMemePicture(this.value)"
+                >
+            </select>
+
+            <input
+            type="file"
+            id="image-input"
+            accept="image/jpeg, image/png, image/jpg"
+            >
+        </div>
+
+        <div class="download">
+            <button id="btn-download"><i class="uil uil-arrow-circle-up"></i> GERAR MEME <i class="uil uil-arrow-circle-up"></i></button>
+        </div>
+
+</div>
+    </div>
+    <script src="./javascript/scripts.js"></script>
+    <script src="./javascript/html2Canvas.js"></script>
+    <script>
+  
+      document.getElementById("btn-download").onclick = () =>{
+        const screenshotPrint = document.querySelector("#downlabled")
+  
+        html2canvas(screenshotPrint).then((canvas)=>{
+          const base64Image = canvas.toDataURL("image/png")
+          let anchor = document.createElement("a")
+          anchor.setAttribute("href", base64Image)
+          anchor.setAttribute("download", "my-meme.png")
+          anchor.click()
+          anchor.remove()
+        })
+  
+      }
+  
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".input", {
+        strings:["de","Memes","com","Front-end."],
+        typespeed: 10,
+        backspeed: 20,
+        loop:true
+    });
+</script>
+
+</body>
+</html>

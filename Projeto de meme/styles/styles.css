@@ -1,0 +1,103 @@
+body{
+    background: rgb(0, 0, 0);
+}
+
+.container {
+    height:  100%;
+    width: 100%;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.logo h1 span{
+    color: #ffff00;
+}
+
+.app-image{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+#display-image{
+    width: 100%;
+    height: 470px;
+    /*background-image: url('/imagens/pense.png');*/
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.app{
+    border: 2px solid rgba(215, 215, 215, 0.412);
+    border-radius: 10px;
+   
+    padding: 40px;
+    padding-top: 10px;
+
+    margin-top: 5px;
+    background-color: #09dfbb;
+}
+
+.app-photo-picker{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+}
+
+textarea{
+    width: 100%;
+    resize: vertical;
+
+     overflow: hidden;
+    height: 80px;
+
+    outline: none;
+
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+#btn-download{
+    width: 100%;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+    background-color: #0000ff;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 12px;
+}
+
+#btn-download:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    
+}
+
+.text-box{
+    background: black;
+    color: white;
+}
+
+#meme-list{
+    width: 100%;
+    font-size: large;
+    font-family: sans-serif;
+    color: black;
+}
